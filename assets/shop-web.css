@@ -1,0 +1,116 @@
+.hero-sub-shop {
+  margin: 0.5rem 0 0;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: clamp(0.78rem, 1.1vw, 0.95rem);
+  letter-spacing: 0.08em;
+  color: rgba(244, 244, 237, 0.78);
+}
+.shop-web {
+  position: relative;
+  background: #282C20;
+  color: #F4F4ED;
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 4rem);
+  overflow: hidden;
+  border-top: 1px solid rgba(203, 203, 185, 0.25);
+}
+.sw-head { max-width: 96rem; margin: 0 auto clamp(3rem, 6vw, 5rem); }
+.sw-label {
+  display: inline-block;
+  font-family: "Mona Sans", sans-serif;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: #D2FF00;
+  margin-bottom: 1rem;
+}
+.sw-title {
+  margin: 0;
+  font-size: clamp(3.4rem, 11.2vw, 11.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.sw-sans { font-family: "Mona Sans", sans-serif; font-weight: 900; color: #F4F4ED; }
+.sw-serif { font-family: "Bodoni Moda", serif; font-weight: 400; font-style: italic; color: #D2FF00; letter-spacing: -0.01em; }
+.sw-jp-title {
+  margin: clamp(1.25rem, 2.5vw, 2rem) 0 0.75rem;
+  font-family: "Noto Sans JP", "Zen Old Mincho", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.35rem, 2.6vw, 2.25rem);
+  letter-spacing: 0.04em;
+  color: #F4F4ED;
+}
+.sw-lead {
+  margin: 0;
+  max-width: 44rem;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: clamp(0.95rem, 1.25vw, 1.125rem);
+  line-height: 1.85;
+  color: rgba(244, 244, 237, 0.84);
+}
+.sw-rows { border-top: 1px solid rgba(203, 203, 185, 0.35); margin: 0 calc(-1 * clamp(1.25rem, 4vw, 4rem)); }
+.sw-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(18rem, 32rem);
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.6rem, 3.2vw, 2.8rem) clamp(1.25rem, 4vw, 4rem);
+  border-bottom: 1px solid rgba(203, 203, 185, 0.35);
+  isolation: isolate;
+}
+.sw-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #D2FF00;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+.sw-row:hover::before, .sw-row.is-active::before { transform: scaleX(1); }
+.sw-row-en {
+  font-family: "Mona Sans", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.2rem, 9vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  color: #F4F4ED;
+  transition: color 0.35s ease;
+}
+.sw-row-desc {
+  margin: 0;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: clamp(0.92rem, 1.15vw, 1.08rem);
+  line-height: 1.75;
+  color: rgba(244, 244, 237, 0.88);
+  transition: color 0.35s ease;
+}
+.sw-row:hover .sw-row-en, .sw-row:hover .sw-row-desc,
+.sw-row.is-active .sw-row-en, .sw-row.is-active .sw-row-desc { color: #282C20; }
+.sw-flow {
+  list-style: none; padding: 0; margin: clamp(3rem, 6vw, 5rem) auto;
+  max-width: 96rem; display: grid; grid-template-columns: repeat(3, 1fr);
+}
+.sw-flow li { padding: 1rem 1.25rem 0 0; border-top: 1px solid #CBCBB9; font-family: "Zen Kaku Gothic New", sans-serif; font-size: 0.98rem; }
+.sw-num { display: block; font-family: "Mona Sans", sans-serif; font-weight: 800; color: #D2FF00; margin-bottom: 0.35rem; }
+.sw-actions { display: flex; flex-wrap: wrap; gap: 1rem; max-width: 96rem; margin: 0 auto; }
+.sw-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem; padding: 1rem 1.75rem;
+  font-family: "Noto Sans JP", sans-serif; font-weight: 900; font-size: 0.95rem; text-decoration: none;
+  border: 1px solid #F4F4ED; color: #F4F4ED; transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.sw-btn.primary { background: #D2FF00; border-color: #D2FF00; color: #111112; }
+.sw-btn:hover { background: #F4F4ED; color: #111112; border-color: #F4F4ED; }
+@media (max-width: 991px) {
+  .sw-title { white-space: normal; }
+  .sw-row { grid-template-columns: 1fr; gap: 0.6rem; }
+  .sw-flow { grid-template-columns: 1fr; }
+  .sw-flow li { border-top: 0; border-left: 1px solid #CBCBB9; padding: 0 0 1.25rem 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sw-row::before, .sw-row-en, .sw-row-desc, .sw-btn { transition: none !important; }
+}

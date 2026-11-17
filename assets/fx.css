@@ -1,0 +1,86 @@
+/* Factio FX Styles */
+.display {
+  will-change: transform;
+  transform-origin: left center;
+}
+.display .line {
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.fx-char {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity;
+}
+.fx-char.fx-init {
+  transform: translate3d(0, 105%, 0);
+  opacity: 0;
+}
+.fx-char.fx-in {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i, 0) * 0.02s), opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i, 0) * 0.02s);
+}
+.button, a.text-link {
+  will-change: transform;
+}
+.fx-cursor-dot, .fx-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.fx-cursor-dot.is-active, .fx-cursor-ring.is-active {
+  opacity: 1;
+}
+.fx-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #D2FF00;
+}
+.fx-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #D2FF00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, opacity 0.25s ease;
+}
+.fx-cursor-ring.is-hover, .fx-cursor-ring.is-view {
+  width: 64px;
+  height: 64px;
+}
+.fx-cursor-ring.is-view {
+  background: #D2FF00;
+}
+.fx-cursor-label {
+  font-family: "Mona Sans", "Noto Sans JP", sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #111112;
+  opacity: 0;
+  transform: scale(0.75);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.fx-cursor-ring.is-view .fx-cursor-label {
+  opacity: 1;
+  transform: scale(1);
+}
+.fx-marquee { overflow: hidden; width: 100%; user-select: none; background: #111112; }
+.fx-marquee-row { display: flex; overflow: hidden; white-space: nowrap; padding: 0.32em 0; font-family: "Mona Sans", "Noto Sans JP", sans-serif; font-weight: 900; font-size: clamp(1.75rem, 4.2vw, 3.6rem); line-height: 1.05; letter-spacing: 0.04em; text-transform: uppercase; }
+.fx-marquee-row.is-lime { background: #D2FF00; color: #282C20; }
+.fx-marquee-row.is-olive { background: #282C20; color: #D2FF00; }
+.fx-marquee-track { display: inline-flex; will-change: transform; }
+.fx-marquee-item { flex-shrink: 0; padding-right: 0.35em; }
+@media (max-width: 991.98px), (hover: none), (pointer: coarse) { .fx-cursor-dot, .fx-cursor-ring { display: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  .fx-char, .fx-char.fx-init, .fx-marquee-track, .display, .button, a.text-link { transition: none !important; animation: none !important; transform: none !important; opacity: 1 !important; }
+  .fx-cursor-dot, .fx-cursor-ring { display: none !important; }
+}

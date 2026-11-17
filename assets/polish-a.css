@@ -1,0 +1,66 @@
+body.in-lab-or-shop .mobile-cta-bar {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 991px) {
+  #lab .preview-column {
+    position: sticky !important;
+    top: var(--header-h, 72px) !important;
+    max-height: 30dvh !important;
+    background: #111112 !important;
+    margin-top: 0 !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    z-index: 12 !important;
+  }
+  #lab #garment-stage {
+    height: 24dvh !important;
+    max-height: 24dvh !important;
+  }
+  #lab .preview-column .lab-save-btn,
+  #lab .preview-column .lab-summary-bar {
+    display: none !important;
+  }
+  #design-form > .lab-save-btn,
+  #design-form > .lab-summary-bar {
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 0 12px !important;
+  }
+  #lab .quantities {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  #lab .quantities label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  #lab .quantities input[type="number"] {
+    flex: 1 1 64px !important;
+    max-width: 96px !important;
+    min-height: 44px !important;
+    text-align: center !important;
+  }
+  #lab .quantities .qty-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+  }
+}
+/* まとめはスマホの固定枠では出さない（lab-steps.js と取り合わないよう、動かさずに隠す） */
+@media (max-width: 991px) { #lab .preview-column .lab-summary-bar { display: none !important; } }
+
+/* 11/17 実画面確認：写真枠が固定部分からはみ出して FRONT/BACK が手順の帯の下に隠れるため、枠の高さを固定部分の内側に収める */
+@media (max-width: 991px) {
+  #lab #garment-stage { height: calc(30dvh - 86px) !important; max-height: calc(30dvh - 86px) !important; }
+}

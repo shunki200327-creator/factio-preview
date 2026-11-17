@@ -1,0 +1,90 @@
+/* Factio DESIGN LAB — Studio Stage Overlay (lab-stage.css) */
+#garment-stage {
+  position: relative;
+  overflow: hidden;
+  perspective: 1200px;
+  background:
+    radial-gradient(ellipse 68% 42% at 50% 8%, rgba(244, 244, 237, 0.09) 0%, rgba(244, 244, 237, 0) 100%),
+    radial-gradient(ellipse 72% 64% at 50% 44%, #2a2d27 0%, #1c1e1a 52%, #111112 100%);
+  border: 1px solid rgba(203, 203, 185, 0.22);
+  box-shadow: inset 0 1px 0 rgba(244, 244, 237, 0.08), inset 0 -24px 48px rgba(17, 17, 18, 0.65);
+  cursor: zoom-in;
+  touch-action: manipulation;
+}
+#garment-stage.is-zoomed {
+  cursor: zoom-out;
+}
+#garment-stage::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 4.5%;
+  height: 7.5%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.78) 0%, rgba(17, 17, 18, 0.38) 58%, rgba(17, 17, 18, 0) 100%);
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+  transform: scale(var(--stage-zoom, 1));
+  transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#garment,
+#print-layer,
+#garment-stage .lab-text-layer {
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%);
+  transform: perspective(1200px) rotateY(var(--stage-ry, 0deg)) scale(var(--stage-zoom, 1));
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+#garment-stage.is-flipping #garment,
+#garment-stage.is-flipping #print-layer,
+#garment-stage.is-flipping .lab-text-layer {
+  transition: none;
+}
+#print-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+#garment img {
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.62)) drop-shadow(0 0 22px rgba(244, 244, 237, 0.08));
+}
+#print-art {
+  filter: url(#lab-fabric-warp);
+}
+.lab-save-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid #CBCBB9;
+  background: #282C20;
+  color: #F4F4ED;
+  font-family: "Mona Sans", "Noto Sans JP", "Zen Kaku Gothic New", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.lab-save-btn:hover,
+.lab-save-btn:focus-visible {
+  background: #D2FF00;
+  color: #111112;
+  border-color: #D2FF00;
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  #garment-stage::after, #garment, #print-layer, #garment-stage .lab-text-layer, .lab-save-btn {
+    transition: none !important;
+  }
+}

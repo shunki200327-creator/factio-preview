@@ -1,0 +1,13 @@
+#garment-stage.is-sleeve #garment img {width:100%;height:100%;object-fit:fill;filter:none}
+#garment-stage.is-sleeve #garment {isolation:isolate}
+#garment-stage.is-sleeve .sleeve-tint {position:absolute;inset:0;mix-blend-mode:multiply;mask-size:100% 100%;-webkit-mask-size:100% 100%;pointer-events:none}
+#garment-stage.is-sleeve #print-layer {mask-image:none!important;-webkit-mask-image:none!important;mix-blend-mode:multiply}
+#garment-stage.is-sleeve #print-art {max-width:none;max-height:none;display:flex;align-items:center;justify-content:center}
+#garment-stage.is-sleeve #print-art img {width:100%;height:100%;object-fit:contain;max-height:none}
+#garment-stage.is-sleeve #sample-print {width:100%;height:100%}
+#garment-stage.is-sleeve .lab-text-layer {display:none}
+#sleeve-range {position:absolute;border:1px solid #282c2066;pointer-events:none}
+#sleeve-caption {font-size:12px;line-height:1.6;margin:8px 0;color:#cbcbb9}
+#sleeve-caption[hidden],#sleeve-range[hidden]{display:none}
+@media(max-width:991px){#sleeve-caption{font-size:11px;margin:4px 0}}
+#garment-stage.is-sleeve :is(#garment,#print-layer) {aspect-ratio:900 / 763}

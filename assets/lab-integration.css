@@ -1,0 +1,72 @@
+#garment,
+#print-layer {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  transform: translateX(-50%) rotateY(var(--stage-ry, 0deg)) scale(var(--stage-zoom, 1));
+  transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%);
+}
+#print-layer {
+  mix-blend-mode: normal;
+}
+#garment-stage .lab-text-layer {
+  position: absolute;
+  inset: 0;
+  transform: none;
+}
+.lab-steps-dock {
+  top: 90px;
+}
+.lab-summary-bar {
+  min-width: 0;
+}
+.menu-open .mobile-cta-bar,
+body.menu-open .mobile-cta-bar {
+  visibility: hidden;
+}
+@media (max-width: 991px) {
+  #lab .preview-column { position: sticky; top: 72px; z-index: 12; height: auto; display: block; }
+  #lab #garment-stage { position: relative; top: auto; height: 30dvh; z-index: auto; }
+  #lab #garment { height: 100%; width: auto; }
+  .preview-note, .preview-bottom .micro { display: none; }
+  .preview-column:focus-within { z-index: 12; }
+  .lab-summary-bar, .lab-summary-price { flex-wrap: wrap; }
+  .lab-summary-specs { white-space: normal; flex-basis: 100%; }
+  .lab-steps-dock { top: var(--ls-sticky-top, 72px); z-index: 13; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #garment, #print-layer {
+    transition: none !important;
+  }
+}
+
+#garment-stage.is-exporting #garment, #garment-stage.is-exporting #print-layer {transform:translateX(-50%);transition:none}
+#garment-stage .lab-text-layer {transform-style:flat;backface-visibility:visible}
+#lab .preview-column {min-width:0}
+@media(max-width:991px){#lab .preview-column:focus-within{z-index:12} .lab-summary-price{white-space:normal} .lab-controls fieldset{scroll-margin-top:calc(30dvh + 300px)}}
+#garment, #print-layer {right:auto;bottom:auto}
+.lab-step-btn{min-height:44px}
+.lab-summary-specs{overflow-wrap:anywhere}
+#lab-text-front{overflow:hidden;text-overflow:clip}
+
+/* 11/16 Claude：スマホで固定部分を薄くし、操作欄を広く。案内は自動で消す。袖ラベルは枠の下に */
+@media (max-width: 991px) {
+  #lab .lab-save-btn { min-height: 36px; padding: 6px 12px; font-size: 12px; margin-top: 6px; }
+  #lab .lab-summary-specs { display: none; }
+  #lab .lab-summary-bar { padding: 6px 0; }
+  #lab #garment-stage { height: 27dvh; }
+}
+#gesture-hint { animation: lab-hint-out .4s ease 2.2s forwards; pointer-events: none; }
+@keyframes lab-hint-out { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { #gesture-hint { animation: none; } }/* 濃い色のボディでは、プリントをはっきり見せる（dark-body.js） */
+#garment-stage.is-dark-body #print-layer img,
+#garment-stage.is-dark-body [class*="sleeve"] img:not([class*="body"]):not([class*="garment"]) { mix-blend-mode: normal !important; opacity: .97; }
+#garment-stage.is-dark-body #print-layer,
+#garment-stage.is-dark-body #print-art { mix-blend-mode: normal !important; opacity: 1 !important; }
+#garment-stage.is-dark-body #upload-preview { opacity: .96; }
+/* 11/16 袖のプリントは取りやめ（辻さん）。位置は胸・背中の2つ */
+#position-controls { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+#sleeve-range, #sleeve-caption { display: none !important; }

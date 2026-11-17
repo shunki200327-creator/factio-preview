@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 120" width="430" height="120" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Factio</title>
+  <g fill="#D2FF00" fill-rule="evenodd">
+    <!-- F -->
+    <path d="M 28 16 H 92 V 36 H 50 V 53 H 86 V 73 H 50 V 104 H 28 Z" />
+    <!-- a -->
+    <path d="M 150 38 H 170 V 104 H 150 V 96 A 32 34 0 0 1 130 106 C 111 106 96 90 96 71 C 96 52 111 36 130 36 A 32 34 0 0 1 150 46 Z M 133 55 A 16 16 0 1 0 133 87 A 16 16 0 1 0 133 55 Z" />
+    <!-- c -->
+    <path d="M 244 60 A 35 35 0 1 0 244 82 H 223 A 15 15 0 1 1 223 60 Z" />
+    <!-- t -->
+    <path d="M 262 20 H 282 V 38 H 298 V 55 H 282 V 81 C 282 86 285 88 291 88 H 298 V 104 H 286 C 269 104 262 96 262 81 V 55 H 250 V 38 H 262 Z" />
+    <!-- i -->
+    <rect x="306" y="14" width="20" height="20" />
+    <rect x="306" y="38" width="20" height="66" />
+    <!-- o -->
+    <path d="M 369 36 A 35 35 0 1 0 369 106 A 35 35 0 1 0 369 36 Z M 369 56 A 15 15 0 1 1 369 86 A 15 15 0 1 1 369 56 Z" />
+  </g>
+</svg>

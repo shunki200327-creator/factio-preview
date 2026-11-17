@@ -1,0 +1,87 @@
+#journey {
+  --j-paper: #F4F4ED;
+  --j-olive: #282C20;
+  --j-lime: #D2FF00;
+  --j-dark-lime: #B2C73A;
+  --j-black: #111112;
+  --j-gray: #535450;
+  position: relative;
+  background-color: var(--j-olive);
+  color: var(--j-paper);
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  overflow: hidden;
+  padding: 4.5rem 1.25rem;
+}
+.journey-inner { max-width: 1440px; margin: 0 auto; }
+.journey-head { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
+.journey-title { margin: 0; font-size: clamp(2.2rem, 5.2vw, 4.5rem); line-height: 0.96; letter-spacing: -0.02em; }
+.journey-en-sans { font-family: "Mona Sans", sans-serif; font-weight: 800; text-transform: uppercase; margin-right: 0.28em; }
+.journey-en-serif { font-family: "Bodoni Moda", serif; font-weight: 400; font-style: italic; color: var(--j-lime); }
+.journey-sub { margin: 0.35rem 0 0; font-family: "Zen Old Mincho", serif; font-size: clamp(1.05rem, 1.8vw, 1.4rem); color: var(--j-paper); }
+.journey-lead { margin: 0; max-width: 42rem; font-size: clamp(0.92rem, 1.1vw, 1.05rem); line-height: 1.75; color: rgba(244, 244, 237, 0.84); }
+.journey-meter { display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; }
+.journey-count { font-family: "Mona Sans", sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; color: var(--j-lime); white-space: nowrap; }
+.journey-bar { flex: 1; height: 1px; background: var(--j-gray); position: relative; overflow: hidden; }
+.journey-bar i { display: block; width: 100%; height: 100%; background: var(--j-lime); transform-origin: left center; transform: scaleX(0.1667); transition: transform 0.2s linear; }
+.journey-track { list-style: none; margin: 0; padding: 0 0 0 1.25rem; border-left: 1px solid var(--j-lime); display: flex; flex-direction: column; gap: 2.75rem; }
+.journey-panel {
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease, filter 0.6s ease;
+}
+.journey-panel::before {
+  content: "";
+  position: absolute;
+  left: -1.55rem;
+  top: 0.6rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--j-lime);
+}
+.journey-panel.is-active { opacity: 1; transform: translateY(0); }
+.journey-num { overflow: hidden; line-height: 0.84; }
+.journey-num span {
+  display: inline-block;
+  font-family: "Mona Sans", sans-serif;
+  font-weight: 900;
+  font-size: clamp(4.5rem, 22vw, 8rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--j-lime);
+  transform: translateY(32%);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.journey-panel.is-active .journey-num span { transform: translateY(0); }
+.journey-line {
+  display: block;
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(14px);
+  transition: clip-path 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.journey-panel.is-active .journey-line { clip-path: inset(0 0 0% 0); transform: translateY(0); }
+.journey-code { font-family: "Mona Sans", sans-serif; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.18em; color: var(--j-dark-lime); transition-delay: 0.06s; }
+.journey-name { margin: 0.25rem 0 0.6rem; font-family: "Noto Sans JP", sans-serif; font-weight: 900; font-size: clamp(1.35rem, 2.4vw, 2.1rem); transition-delay: 0.14s; }
+.journey-desc { margin: 0; max-width: 34rem; font-size: clamp(0.95rem, 1.2vw, 1.1rem); line-height: 1.8; color: rgba(244, 244, 237, 0.88); transition-delay: 0.22s; }
+@media (min-width: 992px) {
+  #journey.journey-pinned { height: 100vh; padding: 3.5vh 4vw; display: flex; flex-direction: column; justify-content: space-between; }
+  .journey-pinned .journey-inner { width: 100%; height: 100%; max-width: none; display: flex; flex-direction: column; justify-content: space-between; }
+  .journey-pinned .journey-head { grid-template-columns: 1.2fr 1fr; align-items: end; margin-bottom: 0; }
+  .journey-pinned .journey-meter { grid-column: 1 / -1; }
+  .journey-pinned .journey-viewport { flex: 1; display: flex; align-items: center; overflow: visible; }
+  .journey-pinned .journey-track { flex-direction: row; align-items: center; gap: 6vw; padding: 0 10vw; border-left: 0; will-change: transform; }
+  .journey-pinned .journey-panel { flex: 0 0 80vw; width: 80vw; display: grid; grid-template-columns: auto 1fr; align-items: end; gap: clamp(1.5rem, 4vw, 4rem); opacity: 0.38; transform: scale(0.9); filter: brightness(0.6); }
+  .journey-pinned .journey-panel::before { display: none; }
+  .journey-pinned .journey-panel.is-active { opacity: 1; transform: scale(1); filter: brightness(1); }
+  .journey-pinned .journey-num span { font-size: 40vh; -webkit-text-stroke: 2px var(--j-lime); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #journey { height: auto !important; }
+  .journey-track { flex-direction: column !important; transform: none !important; padding: 0 0 0 1.25rem !important; }
+  .journey-panel, .journey-num span, .journey-line { opacity: 1 !important; transform: none !important; filter: none !important; clip-path: none !important; transition: none !important; width: auto !important; }
+}
+
+.journey-panel{min-width:0}.journey-title{overflow-wrap:anywhere}
+
+/* 11/17 実画面確認：固定の上部バー（約78px）が見出しに重ならないよう上を空ける */
+@media (min-width: 992px) { #journey.journey-pinned { padding-top: calc(78px + 2.5vh); } }

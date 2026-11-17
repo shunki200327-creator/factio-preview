@@ -1,0 +1,74 @@
+#print-layer { mix-blend-mode: normal; }
+#print-art { mix-blend-mode: multiply; }
+.lab-text-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  z-index: 2;
+  color: var(--text-color, #F4F4ED);
+  filter: drop-shadow(0 1px 2px rgba(17, 17, 18, 0.28));
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.lab-text-front, .lab-text-back {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+}
+.lab-text-front {
+  top: 28%;
+  width: 56%;
+  font-size: clamp(1rem, 2.8vw, 1.65rem);
+  line-height: 1.1;
+}
+.lab-text-back {
+  top: 24%;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15em;
+}
+.lab-text-front[hidden], .lab-text-back[hidden], .lab-text-name[hidden], .lab-text-num[hidden] { display: none !important; }
+.lab-text-name { font-size: clamp(0.72rem, 1.9vw, 1.05rem); letter-spacing: 0.08em; line-height: 1.1; text-transform: uppercase; }
+.lab-text-num { font-size: clamp(2.5rem, 7.5vw, 4.6rem); line-height: 0.92; }
+.lab-text-layer[data-font="block"] { font-family: "Mona Sans", "Noto Sans JP", sans-serif; font-weight: 900; letter-spacing: -0.05em; }
+.lab-text-layer[data-font="classic"] { font-family: "Bodoni Moda", serif; font-weight: 700; font-style: italic; letter-spacing: 0.02em; }
+.lab-text-layer[data-font="college"] { font-family: "Mona Sans", "Zen Kaku Gothic New", sans-serif; font-weight: 800; letter-spacing: 0.04em; }
+.lab-text-layer[data-font="college"] .lab-text-front,
+.lab-text-layer[data-font="college"] .lab-text-name,
+.lab-text-layer[data-font="college"] .lab-text-num { display: inline-block; transform: scaleY(1.24); transform-origin: center top; }
+.lab-text-layer[data-font="college"] .lab-text-front { transform: translateX(-50%) scaleY(1.24); }
+.lab-text-layer[data-outline="true"] { -webkit-text-stroke: 1.6px var(--text-stroke, #111112); paint-order: stroke fill; }
+.lab-text-grid { display: grid; gap: 0.65rem; font-family: "Noto Sans JP", "Zen Kaku Gothic New", sans-serif; }
+.lab-num-stepper { display: inline-flex; align-items: center; gap: 0.35rem; }
+.lab-num-stepper input { width: 4.5rem; text-align: center; }
+.lab-num-stepper button, .lab-outline-btn {
+  border: 1px solid #CBCBB9;
+  background: #282C20;
+  color: #F4F4ED;
+  padding: 0.35rem 0.7rem;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.lab-num-stepper button:hover, .lab-outline-btn[aria-pressed="true"], #lab-font-controls button[aria-pressed="true"] {
+  background: #D2FF00;
+  color: #111112;
+  border-color: #D2FF00;
+}
+.lab-color-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+@media (prefers-reduced-motion: reduce) {
+  .lab-text-layer, .lab-num-stepper button, .lab-outline-btn { transition: none !important; }
+}
+
+/* 11/17 実画面確認：文字の大きさを画面幅でなく服の写真の幅に合わせる（スマホでチーム名とロゴが重なっていた）。比率はPC表示と同じ */
+@supports (font-size: 1cqw) {
+  #lab-text-layer { container-type: inline-size; }
+  .lab-text-front { font-size: 4.8cqw; }
+  .lab-text-name { font-size: 3.06cqw; }
+  .lab-text-num { font-size: 13.4cqw; }
+}

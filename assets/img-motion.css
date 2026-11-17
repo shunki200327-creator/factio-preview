@@ -1,0 +1,57 @@
+:root {
+  --im-paper: #F4F4ED;
+  --im-olive: #282C20;
+  --im-lime: #D2FF00;
+  --im-lime-dark: #B2C73A;
+  --im-black: #111112;
+  --im-line: #CBCBB9;
+}
+
+.im-frame {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.im-frame.im-ellipse {
+  clip-path: ellipse(var(--im-cx, 120%) var(--im-cy, 120%) at 50% 50%);
+  will-change: clip-path;
+}
+
+.im-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: 50% 50%;
+  transform: perspective(900px)
+    translate3d(var(--im-hx, 0px), var(--im-hy, 0px), 0)
+    translateY(var(--im-py, 0%))
+    rotateX(var(--im-rx, 0deg))
+    rotateY(var(--im-ry, 0deg))
+    scale(var(--im-base, 1.08))
+    scale(var(--im-scale, 1))
+    scale(var(--im-hs, 1));
+  filter: saturate(var(--im-sat, 0.75));
+  will-change: transform, filter;
+}
+
+.im-frame figcaption,
+.im-frame [class*="caption"],
+.im-frame [class*="view"],
+.im-frame [data-cursor] {
+  z-index: 2;
+}
+
+@media (max-width: 991.98px) {
+  .im-img {
+    --im-base: 1.04;
+    --im-sat: 1;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .im-frame.im-ellipse { clip-path: none !important; }
+  .im-img { transform: none !important; filter: none !important; }
+}

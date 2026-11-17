@@ -1,0 +1,56 @@
+/* 3. #shop-web 2nd button outline style */
+#shop-web .sw-btn:not(.primary) {
+  background: transparent !important;
+  color: #D2FF00 !important;
+  border: 1px solid #D2FF00 !important;
+}
+
+/* 4. Footer link single-line lock & hide nav-roll duplicate */
+footer a,
+#footer a {
+  display: inline-block !important;
+  height: 1.25em !important;
+  line-height: 1.25em !important;
+  overflow: hidden !important;
+  vertical-align: bottom;
+}
+
+footer a > :nth-child(n+2),
+#footer a > :nth-child(n+2),
+footer a [aria-hidden="true"],
+#footer a [aria-hidden="true"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 5. #home bottom dark gradient veil above photo and below text */
+#home {
+  position: relative;
+}
+
+#home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 17, 18, 0.75) 0%, rgba(17, 17, 18, 0) 40%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 11/17 実画面確認：position を上書きすると表紙の文字が画面外へ落ちるので z-index だけ上げる */
+#home > .hero-topline,
+#home > .hero-title {
+  z-index: 2;
+}
+#home > .hero-bottom {
+  z-index: 3;
+}
+
+#print-toggle {
+  min-height: 44px !important;
+  border: 1px solid #282C20 !important;
+  box-sizing: border-box !important;
+}
+
+/* 11/17 実画面確認：スマホで小見出しが下の帯と重ならないよう、見出しを上げる */
+@media (max-width: 991px) { #home > .hero-title { bottom: 176px; } }

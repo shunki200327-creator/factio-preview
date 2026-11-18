@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F4F4ED"><meta name="description" content="チームの一着を、つくる。株式会社Factioはチームユニフォームの制作から、ブランドの立ち上げ、ショップづくりまで支えます。">
+<title>Factio | チームの一着を、つくる</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/v2.css">
+
+<script defer src="assets/contact.js"></script><script defer src="assets/garments.js"></script><script defer src="assets/reveal.js"></script><script defer src="assets/motion.js"></script><script defer src="assets/app.js"></script><script defer src="assets/nav-roll.js"></script>
+<link rel="preload" as="image" href="assets/photo/team-900.webp" imagesrcset="assets/photo/team-900.webp 900w, assets/photo/team-1800.webp 1800w" imagesizes="100vw">
+<link rel="preload" href="assets/fonts/font-6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/lab-ux.css">
+<link rel="stylesheet" href="assets/journey.css"><link rel="stylesheet" href="assets/fx.css">
+<script defer src="assets/gsap.min.js"></script><script defer src="assets/ScrollTrigger.min.js"></script><script defer src="assets/journey.js"></script><script defer src="assets/fx.js"></script>
+<script type="module" src="assets/hero-gl.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<div id="loader" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 120" width="430" height="120" aria-hidden="true" class="logo-loading">
+  
+  <g fill="#282C20" fill-rule="evenodd">
+    <!-- F -->
+    <path d="M 28 16 H 92 V 36 H 50 V 53 H 86 V 73 H 50 V 104 H 28 Z" />
+    <!-- a -->
+    <path d="M 150 38 H 170 V 104 H 150 V 96 A 32 34 0 0 1 130 106 C 111 106 96 90 96 71 C 96 52 111 36 130 36 A 32 34 0 0 1 150 46 Z M 133 55 A 16 16 0 1 0 133 87 A 16 16 0 1 0 133 55 Z" />
+    <!-- c -->
+    <path d="M 244 60 A 35 35 0 1 0 244 82 H 223 A 15 15 0 1 1 223 60 Z" />
+    <!-- t -->
+    <path d="M 262 20 H 282 V 38 H 298 V 55 H 282 V 81 C 282 86 285 88 291 88 H 298 V 104 H 286 C 269 104 262 96 262 81 V 55 H 250 V 38 H 262 Z" />
+    <!-- i -->
+    <rect x="306" y="14" width="20" height="20" />
+    <rect x="306" y="38" width="20" height="66" />
+    <!-- o -->
+    <path d="M 369 36 A 35 35 0 1 0 369 106 A 35 35 0 1 0 369 36 Z M 369 56 A 15 15 0 1 1 369 86 A 15 15 0 1 1 369 56 Z" />
+  </g>
+</svg>
+</div>
+<header id="header"><a class="brand" href="#home" aria-label="Factio ホーム"><img src="assets/logo.svg" alt="Factio" width="154" height="43"></a><div class="nav-actions"><a class="button nav-lab" href="#lab">DESIGN LAB <span aria-hidden="true">↗</span></a><button id="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button></div></header>
+<nav data-lenis-prevent id="menu" aria-label="メインメニュー" hidden><div class="menu-inner"><span class="micro">A TEAM BEGINS WITH ONE.</span><a href="#home">HOME</a><a href="#services">OUR FIELD</a><a href="#lab">DESIGN <em>LAB</em></a><a href="#about">ABOUT US</a><p>チームの一着を、つくる</p><small>株式会社Factio</small></div></nav>
+<main id="main">
+<section class="hero dark" id="home" aria-labelledby="hero-title">
+<div class="hero-art"><picture><source media="(min-width:992px)" srcset="assets/photo/team-1800.webp"><img id="hero-blank" src="assets/photo/team-900.webp" alt="揃いのユニフォームを着て円陣を組むチームの後ろ姿" width="1800" height="1200" fetchpriority="high"></picture><canvas id="hero-canvas" aria-hidden="true"></canvas></div>
+<div class="hero-topline micro"><span>TEAMWEAR & BRAND CREATION</span><span>OSAKA</span></div>
+<div class="hero-title"><h1 id="hero-title"><span>MAKE YOUR</span><span>TEAM <em>ONE</em></span></h1><p>チームの一着を、つくる</p></div>
+<div class="hero-bottom"><span class="micro hero-thought">同じ一着を着た瞬間、<br>チームに色がつく</span><button id="print-toggle" aria-pressed="false">TOUCH TO COLOR <span aria-hidden="true">↗</span></button><a class="hero-link" href="#lab">一着をデザインする <span aria-hidden="true">↗</span></a></div>
+</section>
+<div class="fx-marquee" aria-hidden="true" data-text="TEAMWEAR — BRAND — PRINT — SHOP — SELL — AI —"></div>
+<section class="manifesto contour dark" id="message" aria-labelledby="message-title">
+<span class="micro">THE FIRST THREAD</span><h2 class="display" id="message-title"><span class="line">FROM <em>FABRIC</em></span><span class="line">TO FIELD.</span></h2>
+<figure class="craft-photo" data-oval><img src="assets/photo/print-900.webp" srcset="assets/photo/print-900.webp 900w, assets/photo/print-1800.webp 1800w" sizes="(min-width:992px) 50vw, 100vw" alt="スキージでインクを刷る職人の手元" width="1800" height="1200" loading="lazy"></figure><div class="manifesto-copy"><p>生地えらびから、プリント、お届けまで。<br>チームとブランドの“はじめて”を、<br class="mobile-only">まるごと支えます。</p><span class="micro">ONE IDEA. ONE TEAM. ONE BEGINNING.</span></div>
+<svg id="signature" viewBox="0 0 620 210" fill="none" aria-label="Factio 仮の手書きサイン"><path d="M60 156 C85 100 132 42 188 26 C211 19 211 39 180 60 L86 108 M110 81 C156 61 222 68 245 64 M111 107 C149 97 180 99 201 97 M180 159 C191 127 235 90 248 104 C260 120 210 159 199 150 C189 141 230 106 244 104 L232 150 L280 126 C311 102 296 96 282 111 C255 146 267 165 301 143 L348 108 M336 73 L314 149 C311 173 345 144 366 126 M304 115 L365 97 M378 112 L363 149 Q373 161 398 132 M388 87 L390 85 M416 121 C445 87 458 119 436 142 C416 165 389 155 402 132 C415 107 443 108 453 118 M90 187 Q282 150 538 159 M359 180 L550 136" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</section>
+<section id="services" class="services contour" aria-labelledby="services-title">
+<div class="section-intro"><span class="micro">OUR FIELD</span><h2 id="services-title">フィールドは、<br><span class="jp-serif">ひとつじゃない</span></h2></div>
+<div class="service-pair"><article class="service on" data-shift="left"><div class="service-art" data-oval><img src="assets/photo/team-900.webp" srcset="assets/photo/team-900.webp 900w, assets/photo/team-1800.webp 1800w" sizes="(min-width:992px) 45vw, 100vw" alt="揃いのウェアで試合の打ち合わせをするチーム" width="760" height="620" loading="lazy"></div><h3>ON <em>THE</em><br>FIELD</h3><h4>同じ一着で、ひとつになる</h4><p>部活のユニフォームも、チームの移動着も。<br>デザインから自社でのプリントまで、<br>チームらしさを一着にします。</p><a href="#lab" class="text-link">チームの一着を試す <span aria-hidden="true">↗</span></a></article>
+<article class="service off" data-shift="right"><div class="service-art" data-oval><img src="assets/photo/sew-900.webp" srcset="assets/photo/sew-900.webp 900w, assets/photo/sew-1800.webp 1800w" sizes="(min-width:992px) 45vw, 100vw" alt="ミシンで生地を縫い合わせる手元" width="760" height="620" loading="lazy"></div><h3>OFF <em>THE</em><br>FIELD</h3><h4>思いを、ブランドにする</h4><p>生地と形を選び、縫製工場へ。<br>ブランドづくりの最初の一歩から、<br>つくった服をBASE・Shopifyで売るまで伴走します。</p><p class="service-status">ブランド立ち上げのご相談も、Gmailから受け付けています</p><aside class="ai-support"><span class="micro">ALSO IN OUR FIELD</span><h3>WEB <em>& AI</em></h3><p>ブランドのWebサイト制作、BASE・Shopifyの構築、AI活用のご相談</p></aside></article></div>
+
+</section>
+<section id="journey" class="dark"></section>
+<section id="lab" class="lab dark" aria-labelledby="lab-title">
+<div class="lab-heading"><span class="micro">YOUR TEAM STARTS HERE.</span><h2 class="display" id="lab-title" data-reveal><span class="line">DESIGN <em>LAB</em></span></h2><p>まずは、一着。<span>あなたのデザインを着せてみよう。</span></p></div>
+<noscript><p>シミュレーターの操作にはJavaScriptを有効にしてください。</p></noscript>
+<div class="lab-workspace" id="lab-workspace">
+<div class="preview-column"><div class="preview-top micro"><span id="product-label">T-SHIRT / WHITE</span><span>PREVIEW</span></div><div id="garment-stage"><p id="gesture-hint" role="status" hidden>ドラッグで移動・ピンチで拡大</p><div id="garment"></div><div id="print-layer"><div id="print-art" tabindex="0" role="group" aria-label="プリント画像。矢印キーで位置を調整"><img id="upload-preview" alt="アップロードしたプリント画像" draggable="false" hidden><div id="sample-print"><img src="assets/logo.svg" alt="Factio ロゴ" draggable="false"></div></div></div></div><div class="preview-bottom"><div class="segmented" id="view-controls" aria-label="表示面"><button type="button" data-view="front" aria-pressed="true">FRONT</button><button type="button" data-view="back" aria-pressed="false">BACK</button></div><span class="micro">写真による配置イメージです</span></div><p class="preview-note">画像はドラッグで移動。矢印キーでも調整できます。<br>背中を選ぶと背面、袖を選ぶと正面に表示します。</p></div>
+<form id="design-form" class="lab-controls">
+<fieldset><legend><b>01</b> ボディを選ぶ</legend><div class="choice-row" id="body-controls"></div><p id="unit-price" class="field-note" aria-live="polite"></p><p class="field-note">参考上代の55%OFF。プリント代は別途お見積り。<br>1枚から承ります。納期は2週間前後です。<br>選択できるサイズはS〜XLです。<br><a id="price-source" href="https://united-athle.jp/ua/item/500101/" target="_blank" rel="noopener">公式参考上代 ↗</a>（2026年11月16日確認）</p></fieldset>
+<fieldset><legend><b>02</b> 色を選ぶ <span id="color-name">ホワイト</span></legend><div class="swatches" id="color-controls"></div></fieldset>
+<fieldset><legend><b>03</b> プリントの位置</legend><div class="choice-row" id="position-controls"><button type="button" data-position="chest" aria-pressed="true">胸</button><button type="button" data-position="back" aria-pressed="false">背中</button><button type="button" data-position="sleeve" aria-pressed="false">袖</button></div></fieldset>
+<fieldset><legend><b>04</b> デザインを入れる</legend><label class="upload-button" for="upload">画像をアップロード <span aria-hidden="true">＋</span><input id="upload" type="file" accept="image/png,image/jpeg,image/webp"></label><p class="field-note">PNG・JPG・WebP / 10MBまで<br>画像はブラウザ内だけで使用し、送信しません。</p><p id="upload-status" role="status"></p><div class="scale-control"><label for="scale">大きさ</label><input id="scale" type="range" min="40" max="160" value="100"><output id="scale-value" for="scale">100%</output></div><div class="placement-controls"><span>位置調整</span><button type="button" data-move="left" aria-label="画像を左へ">←</button><button type="button" data-move="up" aria-label="画像を上へ">↑</button><button type="button" data-move="down" aria-label="画像を下へ">↓</button><button type="button" data-move="right" aria-label="画像を右へ">→</button><button type="button" id="reset-print">リセット</button></div></fieldset>
+<fieldset><legend><b>05</b> プリント方法</legend><label class="field-label" for="print-method">ご希望の方法</label><select id="print-method"><option>DTF</option><option>シルクスクリーン</option><option>オンデマンド印刷</option><option>特殊プリント</option><option>刺繍（相談）</option></select><p class="field-note">素材やデザインに合う方法をご相談のうえで決定します。</p></fieldset><fieldset id="quantity-field"><legend><b>06</b> チームについて</legend><div class="quantities"><label>S<input name="qty-S" type="number" min="0" max="9999" step="1" value="0" inputmode="numeric"></label><label>M<input name="qty-M" type="number" min="0" max="9999" step="1" value="0" inputmode="numeric"></label><label>L<input name="qty-L" type="number" min="0" max="9999" step="1" value="0" inputmode="numeric"></label><label>XL<input name="qty-XL" type="number" min="0" max="9999" step="1" value="0" inputmode="numeric"></label></div><p id="quantity-error" role="alert" hidden>枚数を入れてください</p><div class="total">合計 <output id="total">0</output> 枚</div><label class="field-label" for="team">チーム名 <span>任意</span></label><input id="team" name="team" maxlength="80" placeholder="チーム名を入力"><label class="field-label" for="deadline">希望納期 <span>任意</span></label><select id="deadline" name="deadline" aria-label="希望納期の年月"></select><p class="field-note">納期・制作可否はご相談のうえで決定します。</p></fieldset>
+<button class="button submit-button" type="submit">この内容で相談する <span aria-hidden="true">↗</span></button><p class="field-note">次の画面で内容を確認・コピーできます。</p>
+</form></div>
+</section>
+<section id="print-methods" class="process contour" aria-labelledby="methods-title">
+  <div class="process-head">
+    <h2 id="methods-title">PRINT <em>METHODS</em></h2>
+    <p>デザインや素材に合わせて合うプリント方法をご提案します。対応アイテムはTシャツ・ロングT・パーカーです。1枚から、納期は2週間前後です。</p>
+  </div>
+  <ol class="steps">
+    <li>
+      <span class="step-number">01</span><div><h3>DTF</h3>
+      <p>専用フィルムの柄を熱で生地へ転写します。</p></div>
+    </li>
+    <li>
+      <span class="step-number">02</span><div><h3>シルクスクリーン</h3>
+      <p>色ごとの版でインクを生地に刷る方法です。</p></div>
+    </li>
+    <li>
+      <span class="step-number">03</span><div><h3>オンデマンド印刷</h3>
+      <p>データから必要な枚数を印刷します。素材や柄に応じて方式をご相談します。</p></div>
+    </li>
+    <li>
+      <span class="step-number">04</span><div><h3>特殊プリント</h3>
+      <p>発泡・箔など相談を承ります。素材や柄で可否確認を行います。</p></div>
+    </li>
+  </ol>
+  <p class="methods-note">刺繍も可能です（お問い合わせください）。</p>
+</section>
+
+<section class="process contour" id="process" aria-labelledby="process-title"><div class="process-head"><span class="micro">HOW WE MAKE IT</span><h2 id="process-title">一着までの、<span class="jp-serif">道のり</span></h2></div><ol class="steps"><li><span class="step-number">01</span><div><h3>ご相談</h3><p>どんなチームで、どんな一着に。<br>まずは思いを聞かせてください。</p></div></li><li><span class="step-number">02</span><div><h3>デザイン</h3><p>ボディ・色・プリントを選び、<br>チームらしい形を一緒に探します。</p></div></li><li><span class="step-number">03</span><div><h3>プリント・生産</h3><p>デザインと仕様を確認してから、<br>一着ずつ、形にしていきます。</p></div></li><li><span class="step-number">04</span><div><h3>お届け</h3><p>同じ一着に、袖を通す。<br>チームの新しいはじまりへ。</p></div></li></ol></section>
+<section class="about" id="about" aria-labelledby="about-title"><div><span class="micro">THE TEAM BEHIND YOUR TEAM</span><h2 id="about-title">ABOUT <em>US</em></h2></div><dl><div><dt>会社名</dt><dd>株式会社Factio<span>ファクティオ</span></dd></div><div><dt>代表</dt><dd>久門 光</dd></div><div><dt>事業内容</dt><dd>チームユニフォーム制作<br>ブランド立ち上げ支援<br>AIを使った業務効率化・制作支援</dd></div></dl></section>
+</main>
+<div class="fx-marquee" aria-hidden="true" data-text="TEAMWEAR — BRAND — PRINT — SHOP — SELL — AI —"></div>
+<footer class="footer-wrap"><div class="footer dark contour"><span class="micro">FROM THE FIRST IDEA TO YOUR FIRST TEAMWEAR.</span><h2 class="display"><span class="line">MADE FOR</span><span class="line">YOUR <em>TEAM</em></span></h2><div class="contact-status"><span>LET’S MAKE ONE.</span><p>お問い合わせ / Gmail <small data-contact-email>（準備中）</small></p></div><div class="footer-bottom"><a href="#home" aria-label="Factio ホーム"><img src="assets/logo-white.svg" alt="Factio" width="140" height="40" loading="lazy"></a><nav aria-label="フッターメニュー"><a href="#services">OUR FIELD</a><a href="#lab">DESIGN LAB</a><a href="#about">ABOUT US</a></nav><small>© 2026 Factio</small></div></div></footer>
+<dialog data-lenis-prevent id="summary-dialog" aria-labelledby="summary-title"><div class="dialog-top"><span class="micro">YOUR TEAM, YOUR DESIGN.</span><button id="close-summary" aria-label="確認画面を閉じる">×</button></div><h2 id="summary-title">この一着から、<br><span class="jp-serif">はじめよう</span></h2><p>相談内容をまとめました。</p><table class="summary-table"><caption class="micro">DESIGN DETAILS</caption><tbody id="summary-details"></tbody></table><div id="summary-image" hidden></div><textarea id="summary-text" readonly aria-label="相談内容" rows="12" hidden></textarea><button id="copy-summary" class="button">内容をコピー <span aria-hidden="true">↗</span></button><p id="copy-status" role="status"></p><button id="email-summary" type="button" class="button" disabled>メールを作成 ↗</button><p id="contact-note" class="summary-note">Gmailアドレスは準備中です。内容をコピーして保存できます。</p></dialog>
+<script src="assets/lab-ux.js" defer></script>
+</body></html>

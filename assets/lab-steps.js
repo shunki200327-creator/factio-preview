@@ -22,7 +22,7 @@
   const line = document.createElement('span'); line.className = 'lab-steps-line'; line.setAttribute('aria-hidden', 'true');
   bar.append(line);
   const sumBar = document.createElement('div'); sumBar.className = 'lab-summary-bar'; sumBar.setAttribute('aria-live', 'polite');
-  sumBar.innerHTML = `<div class="lab-summary-specs"></div><div class="lab-summary-price"><span>金額</span><strong data-price>お問い合わせください</strong><small>（税込・プリント代別）</small></div>`;
+  sumBar.innerHTML = `<div class="lab-summary-specs"></div><div class="lab-summary-price"><span>金額</span><strong data-price>お問い合わせください</strong></div>`;
   const specsEl = sumBar.querySelector('.lab-summary-specs'), priceEl = sumBar.querySelector('[data-price]');
   dock.append(bar, sumBar); form.prepend(dock);
   const legendSpans = fsets.map((fs, idx) => {

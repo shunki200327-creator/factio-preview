@@ -48,3 +48,19 @@
     initPriceObserver();
   }
 })();
+
+// 11/18 プリント作業の動画：見える位置で再生し、外れたら止める。動きを減らす設定なら止めた1コマを見せる
+(function () {
+  var v = document.querySelector('.craft-video');
+  if (!v) return;
+  v.muted = true;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay'); v.pause(); return;
+  }
+  var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { e.isIntersecting ? play() : v.pause(); });
+    }, { threshold: 0.15 }).observe(v);
+  } else { play(); }
+})();
